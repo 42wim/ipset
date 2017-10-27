@@ -49,51 +49,51 @@ func (h *Header) render() string {
 	}
 
 	if h.Family != "" {
-		result += fmt.Sprintf(" family %s", h.Family)
+		result += fmt.Sprintf("family %s ", h.Family)
 	}
 
 	if h.Range != "" {
-		result += fmt.Sprintf(" range %s", h.Range)
+		result += fmt.Sprintf("range %s ", h.Range)
 	}
 
 	if h.Hashsize != 0 {
-		result += fmt.Sprintf(" hashsize %d", h.Hashsize)
+		result += fmt.Sprintf("hashsize %d ", h.Hashsize)
 	}
 
 	if h.Maxelem != 0 {
-		result += fmt.Sprintf(" maxelem %d", h.Maxelem)
+		result += fmt.Sprintf("maxelem %d ", h.Maxelem)
 	}
 
 	if h.References != 0 {
-		result += fmt.Sprintf(" references %d", h.References)
+		result += fmt.Sprintf("references %d ", h.References)
 	}
 
 	if h.Timeout != 0 {
-		result += fmt.Sprintf(" timeout %d", h.Timeout)
+		result += fmt.Sprintf("timeout %d ", h.Timeout)
 	}
 
 	if h.Netmask != 0 {
-		result += fmt.Sprintf(" netmask %d", h.Netmask)
+		result += fmt.Sprintf("netmask %d ", h.Netmask)
 	}
 
 	if h.Size != 0 {
-		result += fmt.Sprintf(" size %d", h.Size)
+		result += fmt.Sprintf("size %d ", h.Size)
 	}
 
 	if h.Counters != nil {
-		result += fmt.Sprintf(" counters")
+		result += fmt.Sprintf("counters ")
 	}
 
 	if h.Comment != nil {
-		result += fmt.Sprintf(" comment")
+		result += fmt.Sprintf("comment ")
 	}
 
 	if h.SKBInfo != nil {
-		result += fmt.Sprintf(" skbinfo")
+		result += fmt.Sprintf("skbinfo ")
 	}
 
 	if h.Forceadd != nil {
-		result += fmt.Sprintf(" forceadd")
+		result += fmt.Sprintf("forceadd ")
 	}
 
 	return result

@@ -475,7 +475,15 @@ func Load(ctx context.Context, options ...OptFunc) (*Ipset, error) {
 	}
 
 	var ipset Ipset
-	err = xml.NewDecoder(handle.stdout).Decode(&ipset)
+	output, err := ioutil.ReadAll(handle.stdout)
+	if err != nil {
+		return nil, errors.Wrap(err, "failed read ipset xml")
+	}
+	outputStr := string(output)
+	if !strings.HasPrefix(outputStr, "<ipsets>") {
+		outputStr = "<ipsets>" + outputStr + "</ipsets>"
+	}
+	err = xml.Unmarshal([]byte(outputStr), &ipset)
 	if err != nil {
 		return nil, errors.Wrap(err, "failed to parse ipset config")
 	}
